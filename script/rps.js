@@ -1,4 +1,4 @@
-const score = {
+const score = JSON.parse(localStorage.getItem("score")) || {
   wins: 0,
   losses: 0,
   ties: 0,
@@ -27,6 +27,8 @@ function play(userChoice) {
   } else {
     score.ties++;
   }
+
+  localStorage.setItem("score", JSON.stringify(score));
 
   alert(
     `You picked ${userChoice}. Computer picked ${computerChoice}. ${result}\nWins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`
