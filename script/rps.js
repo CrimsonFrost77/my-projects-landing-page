@@ -1,3 +1,9 @@
+const score = {
+  wins: 0,
+  losses: 0,
+  ties: 0,
+};
+
 //function to play the game
 function play(userChoice) {
   const computerChoice = pickComputerMove();
@@ -13,8 +19,17 @@ function play(userChoice) {
   } else {
     result = `You lose!`;
   }
+
+  if (result === "You win!") {
+    score.wins++;
+  } else if (result === "You lose!") {
+    score.losses++;
+  } else {
+    score.ties++;
+  }
+
   alert(
-    `You picked ${userChoice}. Computer picked ${computerChoice}. ${result}`
+    `You picked ${userChoice}. Computer picked ${computerChoice}. ${result}\nWins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`
   );
 }
 
@@ -29,4 +44,11 @@ function pickComputerMove() {
     computerChoice = "scissors";
   }
   return computerChoice;
+}
+
+function resetScore() {
+  score.wins = 0;
+  score.losses = 0;
+  score.ties = 0;
+  alert("Score has been reset!");
 }
