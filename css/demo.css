@@ -1,2 +1,12 @@
-.button {
+.red-button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 15px;
+}
+.blue-button {
+  background-color: rgb(5, 61, 87);
+  color: white;
+  border: none;
+  padding: 5px 15px;
 }
