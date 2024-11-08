@@ -52,3 +52,7 @@ function resetScore() {
   score.ties = 0;
   alert("Score has been reset!");
 }
+
+module.exports = {
+  pickComputerMove,
+};
