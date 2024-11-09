@@ -17,8 +17,10 @@ function subscribeButtonClicked() {
   // Since we already have button reference, no need to query again
   if (subscribeButton.textContent === "Subscribe") {
     subscribeButton.textContent = "Subscribed";
+    subscribeButton.classList.add("is-subscribed");
   } else {
     subscribeButton.textContent = "Subscribe";
+    subscribeButton.classList.remove("is-subscribed");
   }
 }
 
