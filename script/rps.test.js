@@ -1,4 +1,4 @@
-// demo.test.js
+// rps.test.js
 
 // Mock localStorage with initial score
 const initialScore = {
