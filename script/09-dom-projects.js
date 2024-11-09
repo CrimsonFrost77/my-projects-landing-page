@@ -20,7 +20,7 @@ function subscribeButtonClicked() {
 //if price with shipping is greater than 40, free shipping
 //otherwise, shipping cost is 10
 function calculateButtonClicked() {
-  const price = parseFloat(priceInput.value);
+  const price = parseFloat(priceInput.value) || 0;
   const priceWithShipping = price + 10;
   if (priceWithShipping > 40) {
     priceOutput.textContent = `$${price}`;
