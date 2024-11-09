@@ -78,7 +78,3 @@ function resetScore() {
 function updateScoreText() {
   scoreText.textContent = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
 }
-
-module.exports = {
-  pickComputerMove,
-};

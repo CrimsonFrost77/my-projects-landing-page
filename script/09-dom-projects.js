@@ -2,7 +2,12 @@
 const subscribeButton = document.querySelector(".js-subscribe-button");
 const calculateButton = document.querySelector(".js-calculate-button");
 const priceInput = document.querySelector(".js-price-input");
-const priceOutput = document.querySelector(".js-price-output");
+
+priceInput.onkeydown = function (event) {
+  if (event.key === "Enter") {
+    calculateButtonClicked();
+  }
+};
 
 // Add click event listener to the button
 subscribeButton.addEventListener("click", subscribeButtonClicked);
@@ -20,6 +25,7 @@ function subscribeButtonClicked() {
 //if price with shipping is greater than 40, free shipping
 //otherwise, shipping cost is 10
 function calculateButtonClicked() {
+  const priceOutput = document.querySelector(".js-price-output");
   const price = parseFloat(priceInput.value) || 0;
   const priceWithShipping = price + 10;
   if (priceWithShipping > 40) {
