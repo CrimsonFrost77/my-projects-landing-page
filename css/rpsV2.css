@@ -2,6 +2,8 @@ body {
   background-color: black;
   font-family: Arial, Helvetica, sans-serif;
   color: white;
+  margin: 0;
+  padding: 15px;
 }
 
 .main-content {
@@ -12,6 +14,7 @@ body {
 
 .page-heading {
   text-align: center;
+  font-size: 2rem;
 }
 
 .move-button {
@@ -43,4 +46,38 @@ body {
   padding: 10px;
   margin-top: 20px;
   cursor: pointer;
+}
+
+/* Add responsive styles */
+@media screen and (max-width: 600px) {
+  .page-heading {
+    font-size: 1.5rem;
+  }
+
+  .move-button {
+    padding: 15px;
+    font-size: 40px;
+  }
+
+  .choice {
+    font-size: 40px;
+  }
+
+  .result-text {
+    font-size: 20px;
+    margin-top: 30px;
+  }
+
+  .choices-text {
+    font-size: 16px;
+  }
+
+  .score-text {
+    font-size: 16px;
+  }
+
+  .button-reset-score {
+    font-size: 15px;
+    padding: 8px 15px;
+  }
 }
