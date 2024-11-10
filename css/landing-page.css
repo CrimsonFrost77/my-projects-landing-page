@@ -1,6 +1,5 @@
 body {
   background-color: #000000;
-  color: white;
   font-family: Arial, sans-serif;
   line-height: 1.6;
   margin: 0;
@@ -9,20 +8,36 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  background-color: rgba(29, 105, 105, 0.63);
 }
 header {
   text-align: center;
   padding: 40px 0;
+  color: white;
 }
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   padding: 20px 0;
+  padding-bottom: 200px;
 }
 .project-card {
-  background: white;
+  background: rgb(42, 129, 103);
+  transition: background-color 0.3s ease;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  background-color: rgb(48, 150, 119);
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+
+.project-card a {
+  color: azure;
+  text-decoration: none;
 }
