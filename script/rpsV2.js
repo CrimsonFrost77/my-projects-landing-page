@@ -27,7 +27,7 @@ resetButton.addEventListener("click", resetScore);
 
 //function to play the game
 function play(userChoice) {
-  const computerChoice = pickComputerMove();
+  let computerChoice = pickComputerMove();
   let result = "";
   if (userChoice === computerChoice) {
     result = `It's a tie!`;
@@ -36,14 +36,14 @@ function play(userChoice) {
     (userChoice === "paper" && computerChoice === "rock") ||
     (userChoice === "scissors" && computerChoice === "paper")
   ) {
-    result = `You win!`;
+    result = `You win :)`;
   } else {
-    result = `You lose!`;
+    result = `You lose :(`;
   }
 
-  if (result === "You win!") {
+  if (result === "You win :)") {
     score.wins++;
-  } else if (result === "You lose!") {
+  } else if (result === "You lose :(") {
     score.losses++;
   } else {
     score.ties++;
@@ -52,7 +52,24 @@ function play(userChoice) {
   localStorage.setItem("score", JSON.stringify(score));
   updateScoreText();
   resultText.textContent = result;
-  choicesText.textContent = `You ${userChoice} - ${computerChoice} Computer`;
+
+  if (userChoice === "rock") {
+    userChoice = "✊";
+  } else if (userChoice === "paper") {
+    userChoice = "🖐️";
+  } else {
+    userChoice = "✌️";
+  }
+
+  if (computerChoice === "rock") {
+    computerChoice = "✊";
+  } else if (computerChoice === "paper") {
+    computerChoice = "🖐️";
+  } else {
+    computerChoice = "✌️";
+  }
+
+  choicesText.innerHTML = `You <span class="choice">${userChoice}</span><span class = "choice">${computerChoice}</span> Computer`;
 }
 
 //pick computer move
@@ -72,6 +89,7 @@ function resetScore() {
   score.wins = 0;
   score.losses = 0;
   score.ties = 0;
+  localStorage.setItem("score", JSON.stringify(score));
   updateScoreText();
 }
 
