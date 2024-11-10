@@ -1,24 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Rock Paper Scissors</title>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/rpsV2.css" />
+    <title>My Projects Portfolio</title>
+    <link rel="stylesheet" href="css/landing-page.css" />
   </head>
   <body>
-    <h1 class="page-heading">Rock Paper Scissors Game</h1>
+    <div class="container">
+      <header>
+        <h1>My Projects Portfolio</h1>
+        <p>Welcome to my project showcase</p>
+      </header>
 
-    <!--Rock paper scissors game content-->
-    <div class="main-content">
-      <button id="rock" class="move-button">✊</button>
-      <button id="paper" class="move-button">🖐️</button>
-      <button id="scissors" class="move-button">✌️</button>
-      <p id="result-text" class="result-text"></p>
-      <p id="choices-text" class="choices-text"></p>
-      <p id="score-text" class="score-text"></p>
-      <button id="reset-score" class="button-reset-score">Reset Score</button>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h2>Rock Paper Scissors</h2>
+          <p>A classic game built with HTML, CSS, and JavaScript</p>
+          <a href="rpsV2.html">View Project</a>
+        </div>
+        <!-- Add more project cards as needed -->
+      </div>
     </div>
 
-    <script src="script/rpsV2.js"></script>
+    <script src="script/landing-page.js"></script>
   </body>
 </html>
