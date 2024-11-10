@@ -51,7 +51,6 @@ function play(userChoice) {
 
   localStorage.setItem("score", JSON.stringify(score));
   updateScoreText();
-  resultText.textContent = result;
 
   if (userChoice === "rock") {
     userChoice = "✊";
@@ -69,6 +68,7 @@ function play(userChoice) {
     computerChoice = "✌️";
   }
 
+  resultText.textContent = result;
   choicesText.innerHTML = `You <span class="choice">${userChoice}</span><span class = "choice">${computerChoice}</span> Computer`;
 }
 
@@ -90,6 +90,8 @@ function resetScore() {
   score.losses = 0;
   score.ties = 0;
   localStorage.setItem("score", JSON.stringify(score));
+  choicesText.innerHTML = "";
+  resultText.textContent = "";
   updateScoreText();
 }
 

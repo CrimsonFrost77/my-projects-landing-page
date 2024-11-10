@@ -1,3 +1,7 @@
+:root {
+  --font-size-emote: 55px;
+}
+
 body {
   background-color: black;
   font-family: Arial, Helvetica, sans-serif;
@@ -22,14 +26,19 @@ body {
   border: 3px solid white;
   border-radius: 50%;
   padding: 20px;
-  font-size: 55px;
+  font-size: var(--font-size-emote);
   margin: 5px;
   border-style: solid;
   cursor: pointer;
+  transition: scale 0.3s ease;
+}
+
+.move-button:hover {
+  scale: 1.1;
 }
 
 .choice {
-  font-size: 55px;
+  font-size: var(--font-size-emote);
 }
 
 .result-text {
