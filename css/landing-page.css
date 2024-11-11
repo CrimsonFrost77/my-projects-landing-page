@@ -8,7 +8,7 @@ body {
 .container {
   max-width: 1400px;
   margin: 0 auto;
-  background-color: rgba(62, 75, 151, 0.527);
+  background-color: rgba(12, 46, 40, 0.527);
   min-height: 1000px;
 }
 header {
@@ -18,9 +18,9 @@ header {
 }
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
-  padding: 20px 50px;
+  padding: 20px 200px;
   padding-bottom: 200px;
 }
 .project-card {
