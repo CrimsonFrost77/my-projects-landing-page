@@ -3,12 +3,13 @@ body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
   margin: 0;
-  padding: 20px;
+  padding: 0;
 }
 .container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  background-color: rgba(29, 105, 105, 0.63);
+  background-color: rgba(62, 75, 151, 0.527);
+  min-height: 1000px;
 }
 header {
   text-align: center;
@@ -19,11 +20,11 @@ header {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
-  padding: 20px 0;
+  padding: 20px 50px;
   padding-bottom: 200px;
 }
 .project-card {
-  background: rgb(42, 129, 103);
+  background: rgba(76, 175, 179, 0.664);
   transition: background-color 0.3s ease;
   padding: 20px;
   border-radius: 8px;
