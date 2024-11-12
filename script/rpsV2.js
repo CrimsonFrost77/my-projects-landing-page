@@ -2,11 +2,15 @@ const rockButton = document.getElementById("rock");
 const paperButton = document.getElementById("paper");
 const scissorsButton = document.getElementById("scissors");
 const resetButton = document.getElementById("reset-score");
+const autoPlayButton = document.getElementById("auto-play-button");
 
 //output elements
 const resultText = document.getElementById("result-text");
 const scoreText = document.getElementById("score-text");
 const choicesText = document.getElementById("choices-text");
+
+let intervalID;
+let isAutoPlaying = false;
 
 //initialize score
 const score = JSON.parse(localStorage.getItem("score")) || {
@@ -24,6 +28,24 @@ rockButton.addEventListener("click", () => play("rock"));
 paperButton.addEventListener("click", () => play("paper"));
 scissorsButton.addEventListener("click", () => play("scissors"));
 resetButton.addEventListener("click", resetScore);
+autoPlayButton.addEventListener("click", autoPlay);
+
+function autoPlay() {
+  let userMove;
+  if (isAutoPlaying) {
+    clearInterval(intervalID);
+    isAutoPlaying = false;
+    autoPlayButton.textContent = "Auto Play";
+    return;
+  } else {
+    isAutoPlaying = true;
+    intervalID = setInterval(() => {
+      userMove = pickComputerMove();
+      play(userMove);
+    }, 1000);
+    autoPlayButton.textContent = "Stop Auto Play";
+  }
+}
 
 //function to play the game
 function play(userChoice) {
