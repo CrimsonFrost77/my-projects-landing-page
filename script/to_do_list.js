@@ -1,6 +1,7 @@
 let taskList = [];
 //initialize task list from local storage
 taskList = JSON.parse(localStorage.getItem("taskList")) || [];
+
 window.onload = () => renderTasks(taskList);
 
 document.getElementById("add-task-button").addEventListener("click", addTask);
