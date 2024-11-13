@@ -31,9 +31,7 @@ function renderTasks(taskList) {
   const taskListContainer = document.getElementById("task-list-container");
   let renderedTasks = "";
 
-  for (let i = 0; i < taskList.length; i++) {
-    const task = taskList[i];
-
+  taskList.forEach(function (task, index) {
     renderedTasks += `
         <div>
         ${escapeHtml(task.task)}
@@ -41,9 +39,9 @@ function renderTasks(taskList) {
         <div>
         ${escapeHtml(task.taskDueDate)}
         </div>
-        <button class="delete-task-button" onclick="deleteTask(${i})">Delete</button>
+        <button class="delete-task-button" onclick="deleteTask(${index})">Delete</button>
     `;
-  }
+  });
   taskListContainer.innerHTML = renderedTasks;
 }
 
